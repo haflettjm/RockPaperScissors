@@ -6,16 +6,51 @@
     text-align: center;
 }
 
+#btncontainer{
+    margin-top: 4rem;
+}
+
+.btn {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: large;
+    font-weight: 600;
+    background-color: black;
+    border: 0.5rem;
+    border-radius: 1rem;
+}
+
+.btn:hover {
+    background-color: gray;
+}
+
+.btn:active{
+    border: solid 2rem gray;
+    padding: 1.005rem;
+    font-size: xx-large;
+}
+
 #scoreContainer{
     display: flexbox;
     flex-wrap: wrap;
     height: 20vh;
     width: 90vw;
-    margin: 1rem;
-    margin-top: 2rem;
+    margin: 0.5rem;
+    margin-top: 5rem;
 }
 
 #scoreContainer h6 {
     display: inline-block;
     width: 10vw;
+    font-size: medium;
+}
+
+#CompScore {
+    color: red;
+}
+#UsrScore {
+    color: green;
+}
+#Ties {
+    color: grey;
 }
