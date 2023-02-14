@@ -1,6 +1,6 @@
 const output = document.getElementById('output');
 
-output.innerHTML = "Hello World"
+output.innerHTML = "Rock Paper Scissors go!"
 
 console.log('test')
 
