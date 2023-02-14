@@ -49,8 +49,8 @@ const updateScore = (gameOutcome) =>{
             score.innerHTML = computerScore
         }
 
-        if (score.id === "tie"){
-            score.innerHTML = tie
+        if (score.id === "ties"){
+            score.innerHTML = ties
         }
 
     })
@@ -60,36 +60,38 @@ const updateScore = (gameOutcome) =>{
 const decideScore = (userChoice, computerChoice) =>{
     if(userChoice === computerChoice){
         gameOutcome = 'tie';
+    }else{
+        if(userChoice === 1){
+            if(computerChoice === 3){
+                gameOutcome = 'user';
+            }
+            else{
+                gameOutcome = 'computer';
+            }
+        }    
+        if(userChoice === 2){
+            if(computerChoice === 1){
+                gameOutcome = 'user';
+            }
+            else{
+                gameOutcome = 'computer';
+            }
+        }
+        if(userChoice === 3){
+            if(computerChoice === 2){
+                gameOutcome = 'user';
+            }
+            else{
+                gameOutcome = 'computer';
+            }
+        }
     }
-    if(userChoice === 1){
-        if(computerChoice === 3){
-            gameOutcome = 'computer';
-        }
-        else{
-            gameOutcome = 'user';
-        }
-    }    
-    if(userChoice === 2){
-        if(computerChoice === 1){
-            gameOutcome = 'computer';
-        }
-        else{
-            gameOutcome = 'user';
-        }
-    }
-    if(userChoice === 3){
-        if(computerChoice === 2){
-            gameOutcome = 'computer';
-        }
-        else{
-            gameOutcome = 'user';
-        }
-    }
-
     if(gameOutcome === 'computer'){
         output.innerHTML = `Computer chose: ${gameEmojis[computerChoice - 1]} They Won! 😭 Play again?`
-    }else{
+    }else if (gameOutcome != 'tie'){
         output.innerHTML = `Computer chose: ${gameEmojis[computerChoice - 1]} You Won! 🎉 Play again?`
+    }else{
+        output.innerHTML = `Computer chose: ${gameEmojis[computerChoice - 1]} It was a tie! 😱 Play again?`
     }
 
     return gameOutcome
