@@ -8,6 +8,8 @@ const scores =  document.querySelectorAll('.scores')
 
 console.log('hello world')
 
+const gameRounds = document.getElementById('round')
+
 
 /// Take Input
 
@@ -24,7 +26,7 @@ let computerScore = 0;
 let ties = 0;
 let gameOutcome = '';
 const gameEmojis = ['👋🏽', '✊🏽', '✌🏽']
-
+let gameRound = 1;
 
 const updateScore = (gameOutcome) =>{
     if (gameOutcome === 'user'){
@@ -93,6 +95,9 @@ const decideScore = (userChoice, computerChoice) =>{
     }else{
         output.innerHTML = `Computer chose: ${gameEmojis[computerChoice - 1]} It was a tie! 😱 Play again?`
     }
+    gameRound++
+
+    gameRounds.innerHTML = `Round Number: ${gameRound}`
 
     return gameOutcome
 }
